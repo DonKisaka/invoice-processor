@@ -1,7 +1,10 @@
 package com.donald.invoice_processor.model;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
@@ -11,6 +14,9 @@ import java.util.List;
 @Entity
 @Table(name = "invoices")
 @Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class Invoice {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -28,6 +34,9 @@ public class Invoice {
 
     private LocalDateTime processedAt;
 
+    @Enumerated(EnumType.STRING)
+    private InvoiceStatus status;
+
     @PrePersist
     protected void onCreate() {
         processedAt = LocalDateTime.now();
@@ -35,6 +44,9 @@ public class Invoice {
 
     @Embeddable
     @Data
+    @Builder
+    @NoArgsConstructor
+    @AllArgsConstructor
     public static class LineItem {
         private String description;
         private Integer quantity;
