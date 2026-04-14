@@ -27,7 +27,6 @@ public class Invoice {
     private String vendorAddress;
     private String customer;
     private String customerAddress;
-    private String customerEmail;
     private String invoiceNumber;
     private LocalDate invoiceDate;
     private LocalDate dueDate;
