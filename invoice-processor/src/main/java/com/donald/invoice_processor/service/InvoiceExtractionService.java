@@ -40,7 +40,7 @@ public class InvoiceExtractionService {
             LocalDate dueDate,
             BigDecimal totalAmount,
             String currency,
-            String customerName,
+            String customer,
             String customerAddress,
             List<LineItem> lineItems
     ) {
