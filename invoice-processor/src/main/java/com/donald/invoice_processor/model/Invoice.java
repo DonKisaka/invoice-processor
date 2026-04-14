@@ -23,8 +23,14 @@ public class Invoice {
     private Long id;
 
     private String vendor;
+    private String vendorEmail;
+    private String vendorAddress;
+    private String customer;
+    private String customerAddress;
+    private String customerEmail;
     private String invoiceNumber;
     private LocalDate invoiceDate;
+    private LocalDate dueDate;
     private BigDecimal totalAmount;
     private String currency;
 
